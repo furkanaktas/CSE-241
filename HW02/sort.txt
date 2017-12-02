@@ -1,0 +1,78 @@
+mov #0, 30
+mov #1, 23
+mov #2, 4
+mov #3, 56
+mov #4, 34
+mov #5, 56
+mov #6, 89
+mov #7, 32
+mov #8, 45
+mov #9,25        ; Verilen bilgiler sırayla adreslere atandı.(0-9 adresler)
+mov r5,9         ; En karışık durumda maksimum 9 kez çalışması yeterli.(R5 = 9)
+mov #0, R1       ; 0. adresi r1'e atadık.
+mov #0, R2       ; 0. adresi r2'ye atadık.(temp değer olarak) 
+mov #1, R3       ; 1. adresi r3'e atadık.
+sub r1, #1       ; 0'dan 1'i çıkardık 
+jpn r1,19        ; Eğer negatifse swap işlemi (19) atlanır.
+mov R3, #0       ; Eğer pozitifse (17,18) swap işlemi.
+mov R2, #1 ;----------
+mov #1, R1
+mov #1, R2       ; Aynı işlemler 1-2,2-3,3-4,4-5,5-6,6-7,7-8,8-9 
+mov #2, R3       ; adresler için yapıldı
+sub r1, #2
+jpn r1,26
+mov R3, #1
+mov R2, #2 ;----------
+mov #2, R1
+mov #2, R2
+mov #3, R3
+sub r1, #3
+jpn r1,33
+mov R3, #2
+mov R2, #3 ;----------
+mov #3, R1
+mov #3, R2
+mov #4, R3
+sub r1, #4
+jpn r1,40
+mov R3, #3
+mov R2, #4 ;----------
+mov #4, R1
+mov #4, R2
+mov #5, R3
+sub r1, #5
+jpn r1,47
+mov R3, #4
+mov R2, #5 ;----------
+mov #5, R1
+mov #5, R2
+mov #6, R3
+sub r1, #6
+jpn r1,54
+mov R3, #5
+mov R2, #6 ;----------
+mov #6, R1
+mov #6, R2
+mov #7, R3
+sub r1, #7
+jpn r1,61
+mov R3, #6
+mov R2, #7 ;----------
+mov #7, R1
+mov #7, R2
+mov #8, R3
+sub r1, #8
+jpn r1,68
+mov R3, #7
+mov R2, #8 ;----------
+mov #8, R1
+mov #8, R2
+mov #9, R3
+sub r1, #9
+jpn r1,75
+mov R3, #8
+mov R2, #9 ;----------
+sub r5,1         ; R5 1 azaltıldı.
+jmp r5,78        ; R5, 0 olduğunda (9 kez döngü tamamlandığında) 78'e atladık.
+jmp 12           ; R5, 0 değilse 12. satıra döndük.
+hlt

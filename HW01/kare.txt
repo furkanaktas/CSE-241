@@ -1,0 +1,12 @@
+mov r1,10    ; R1'e  10 atandı
+mov r2,10    ; R2'ye 10 atandı
+add r3,r2    ; R2  R3'e eklendi
+sub r1, 1    ; R1'in değeri 1 azaltıldı
+jmp r1,7     ; R1 0 olduğunda 7. satıra geçilcek
+jmp 3        ;  3. adıma geri döndü, ilk seferde 10 tane 10'u topluyoruz
+sub r2,1     ; R2'yi 1 azalltık 
+mov r2,r1    ; R1'e R2'nin yeni değeri atandı (ilk seferde 9)
+Prn r3       ; R3'ü ekrana bas, (her sayının karesinin eklendiği 10^2,9^2 gibi)
+jmp r2,12    ; R2 0 olduğunda halt adımına geçildi
+jmp 3        ;  3. adıma geri dödük (ilk seferde 9 tane 9'u toplamak için) 
+hlt          ;  Programı sonlandır
