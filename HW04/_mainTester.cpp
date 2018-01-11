@@ -1,8 +1,8 @@
 /* 
- * File:   main.cpp
+ * File:   _mainTester.cpp
  * Author: furkan
  *
- * Created on 22 Ekim 2016 Cumartesi, 13:14
+ * Created on 8 Kasım 2016 Cumartesi, 21:14
  */
 
 #include <cstdlib>
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     myCPU.print();
     myMemory.printAll();
     
-   
+    
     CPUProgram myCPUProgram(option);
     myCPUProgram.ReadFile(filename);
     cout << myCPUProgram.getLine(1) << endl;
